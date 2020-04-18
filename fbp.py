@@ -5,7 +5,7 @@ import numpy as np
 from sqlalchemy import create_engine
 from forecast_tables import create_tables, Forecast, session
 
-engine = create_engine('postgresql://msandrock:PWD&@HOST/montredo')
+engine = create_engine('postgresql://DBUSER:PWD&@HOST/DBNAME')
 query = """
         select date_trunc('month', order_date::date)::date as ds, count(unique_order_id) as y
         from dwh_il.fct_orders o
